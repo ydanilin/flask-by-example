@@ -13,4 +13,23 @@ pip freeze > requirements.txt
 
 "C:\Program Files\heroku\bin\heroku.cmd"
 
+"C:\Program Files\heroku\bin\heroku.cmd" create wordcount-dan-pro
+Creating ⬢ wordcount-dan-pro... done
+https://wordcount-dan-pro.herokuapp.com/ | https://git.heroku.com/wordcount-dan-pro.git
 
+"C:\Program Files\heroku\bin\heroku.cmd" create wordcount-dan-stage
+Creating ⬢ wordcount-dan-stage... done
+https://wordcount-dan-stage.herokuapp.com/ | https://git.heroku.com/wordcount-dan-stage.git
+
+# !!! Here it is different from the tutorial! We need to add remotes based on http!
+git remote add pro git@heroku.com:wordcount-dan-pro.git
+git remote add stage git@heroku.com:wordcount-dan-stage.git
+git remote remove heroku
+git remote remove pro
+git remote remove stage
+# Actually needed:
+git remote add pro https://git.heroku.com/wordcount-dan-pro.git
+git remote add stage https://git.heroku.com/wordcount-dan-stage.git
+
+git push stage master
+git push pro master
