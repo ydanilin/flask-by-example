@@ -33,3 +33,12 @@ git remote add stage https://git.heroku.com/wordcount-dan-stage.git
 
 git push stage master
 git push pro master
+
+
+set ENV variables on Windows:
+At this point, only manually:
+set APP_SETTINGS=config.DevelopmentConfig
+
+# ENV variables to Heroku:
+"C:\Program Files\heroku\bin\heroku.cmd" config:set APP_SETTINGS=config.StagingConfig --remote stage
+"C:\Program Files\heroku\bin\heroku.cmd" config:set APP_SETTINGS=config.ProductionConfig --remote pro
