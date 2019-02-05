@@ -1,0 +1,16 @@
+conda create --name tflask python=3.6.6
+conda install flask
+pip freeze > requirements.txt
+
+# we need python 3.6.7 to be supported by Heroku
+deactivate
+conda remove --all --name tflask 
+conda create --name tflask python=3.6.7
+conda install flask
+pip install gunicorn
+pip freeze > requirements.txt
+
+
+"C:\Program Files\heroku\bin\heroku.cmd"
+
+
