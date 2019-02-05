@@ -47,3 +47,13 @@ set APP_SETTINGS=config.DevelopmentConfig
 "C:\Program Files\heroku\bin\heroku.cmd" run python app.py --app wordcount-dan-stage
 "C:\Program Files\heroku\bin\heroku.cmd" run python app.py --app wordcount-dan-pro
 
+
+On windows installed version 10.6
+database superuser password: hatikwah
+port 5432
+locale: use default
+!! This is important otherwise installation fail.
+
+Run:
+"C:\Program Files\PostgreSQL\10\bin\psql.exe" -U postgres
+it prompts for password
