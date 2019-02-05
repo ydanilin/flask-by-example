@@ -42,3 +42,8 @@ set APP_SETTINGS=config.DevelopmentConfig
 # ENV variables to Heroku:
 "C:\Program Files\heroku\bin\heroku.cmd" config:set APP_SETTINGS=config.StagingConfig --remote stage
 "C:\Program Files\heroku\bin\heroku.cmd" config:set APP_SETTINGS=config.ProductionConfig --remote pro
+
+# run Python on Heroku:
+"C:\Program Files\heroku\bin\heroku.cmd" run python app.py --app wordcount-dan-stage
+"C:\Program Files\heroku\bin\heroku.cmd" run python app.py --app wordcount-dan-pro
+
