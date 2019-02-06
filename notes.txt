@@ -8,6 +8,9 @@ conda install psycopg2
 conda install Flask-SQLAlchemy
 pip install Flask-Migrate
 pip install Flask-Script
+conda install requests
+conda install beautifulsoup4
+conda install nltk
 pip freeze > requirements.txt
 
 
