@@ -1,13 +1,13 @@
-conda create --name tflask python=3.6.6
-conda install flask
-pip freeze > requirements.txt
-
 # we need python 3.6.7 to be supported by Heroku
-deactivate
 conda remove --all --name tflask 
 conda create --name tflask python=3.6.7
+
 conda install flask
 pip install gunicorn
+conda install psycopg2
+conda install Flask-SQLAlchemy
+pip install Flask-Migrate
+pip install Flask-Script
 pip freeze > requirements.txt
 
 
@@ -38,6 +38,8 @@ git push pro master
 set ENV variables on Windows:
 At this point, only manually:
 set APP_SETTINGS=config.DevelopmentConfig
+set DATABASE_URL=postgresql://postgres:hatikwah@localhost/wordcount_dev
+
 
 # ENV variables to Heroku:
 "C:\Program Files\heroku\bin\heroku.cmd" config:set APP_SETTINGS=config.StagingConfig --remote stage
@@ -57,3 +59,5 @@ locale: use default
 Run:
 "C:\Program Files\PostgreSQL\10\bin\psql.exe" -U postgres
 it prompts for password
+
+create database wordcount_dev;
