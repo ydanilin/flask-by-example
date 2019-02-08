@@ -2,15 +2,9 @@
 conda remove --all --name tflask 
 conda create --name tflask python=3.6.7
 
-conda install flask
-pip install gunicorn
-conda install psycopg2
-conda install Flask-SQLAlchemy
-pip install Flask-Migrate
-pip install Flask-Script
-conda install requests
-conda install beautifulsoup4
-conda install nltk
+conda install flask psycopg2 Flask-SQLAlchemy requests beautifulsoup4 nltk redis
+pip install gunicorn Flask-Migrate Flask-Script rq
+
 pip freeze > requirements.txt
 
 
@@ -64,3 +58,29 @@ Run:
 it prompts for password
 
 create database wordcount_dev;
+
+"C:\tp\docs\G\Pitonizm\redisdemo\distrib\redis-server.exe"
+"C:\tp\docs\G\Pitonizm\redisdemo\distrib\redis-cli.exe"
+
+python manage.py runserver
+
+If make fresh install Conda on Windows without PATHS, add the following to path:
+C:\tp\Miniconda3\;C:\tp\Miniconda3\Scripts;C:\tp\Miniconda3\Library;C:\tp\Miniconda3\Library\bin
+
+Run Babun:
+C:\Users\danilin\.babun\cygwin\bin\mintty.exe -
+Go to dir in Babun:
+/C/tp/docs/G/Pitonizm/tutorials/flask-by-example
+or "open Babun here"
+pact install python3
+Close shell and then run update.bat inside the babun folder
+pact install libpq-devel
+pact install python3-devel
+Next, do python3 -m ensurepip
+python3 -m pip install redis rq requests beautifulsoup4 nltk flask Flask-SQLAlchemy psycopg2
+python3 -m pip install --upgrade pip
+
+SCAN 0
+TYPE <key>
+HGETALL <key of type hash>
+DEL <key>
