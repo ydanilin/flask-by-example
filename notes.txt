@@ -84,3 +84,33 @@ SCAN 0
 TYPE <key>
 HGETALL <key of type hash>
 DEL <key>
+
+Nginx operations:
+sudo systemctl stop/start/restart/reload nginx
+enable/disable at boot:
+sudo systemctl disable/enable nginx
+did:
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04#step-5-%E2%80%93-setting-up-server-blocks-(recommended)
+
+Remove conda:
+rm -rf ~/Miniconda3
+remove .bashrc and rename .bashrc-miniconda3.bak back to .bashrc
+rm -rf .conda (and ~/.condarc ~/.continuum if any)
+
+Install uwsgi
+(not needed) sudo apt-get install gcc
+conda install -c conda-forge uwsgi
+
+----------------------------------
+simples config, direct access:
+[uwsgi]                  
+module = wsgi:application
+                         
+master = true            
+processes = 5            
+                         
+protocol = http          
+socket = 0.0.0.0:8080    
+----------------------------------
+
+sudo usermod -G www-data -a dan
