@@ -70,11 +70,11 @@ At the time of this writing, Gabbi has almost no support for the situations desc
 Actually Gabbi plugs in into the standard Python [Unittest] module and uses its infrastructure. It is good idea to outline briefly unittest workflow and see where Gabbi comes into play. This understanding will help us a lot when we move forward. The following figure shows us what happens behind the scenes when you hit `python -m unittest <path.to.module.with.tests>`.
 Dashed lines show the belonging of functions (outlined in ellipsises) to certain class entities, solid arrow lines show execution flow.
 
-![Standard Python unittest workflow diagram](decl_testing/test_invok_standard.svg){.center}
+![Standard Python unittest workflow diagram](/decl_testing/test_invok_standard.svg){.center}
 
 Now we will show the same picture with emphasis to Gabbi part and some standard components omited.
 
-![Gabbi part workflow diagram](decl_testing/test_invok_gabbi.svg){.center}
+![Gabbi part workflow diagram](/decl_testing/test_invok_gabbi.svg){.center}
 
 ## Custom request and response handlers: `preprocess` and `postprocess`
 
