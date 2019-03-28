@@ -81,6 +81,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </head>
 <body>
 <h1 id="rest-api-testing-declarative-way-gabbi-framework-over-python-unittest">REST API Testing Declarative Way: Gabbi Framework over Python Unittest</h1>
+<p>Yury Danilin <code>yuvede@gmail.com</code></p>
 <h2 id="problem-statement">Problem Statement</h2>
 <h3 id="whats-the-idea">What’s the Idea?</h3>
 <p>There is a motto among some developers - “Less code is better”. Another concept is <em>Declarative</em> vs <em>Imperative</em> programming style. In a traditional imperative style we tell the machine <strong>how</strong> it should do the task, but in declarative style we just tell <strong>what</strong> we would like to get as a result. Look at SQL - this is a perfect example of a declarative way.</p>
@@ -133,11 +134,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="python-unittest-invocation-procedure">Python unittest invocation procedure</h2>
 <p>Actually Gabbi plugs in into the standard Python <a href="" title="https://docs.python.org/3.6/library/unittest.html">Unittest</a> module and uses its infrastructure. It is good idea to outline briefly unittest workflow and see where Gabbi comes into play. This understanding will help us a lot when we move forward. The following figure shows us what happens behind the scenes when you hit <code>python -m unittest &lt;path.to.module.with.tests&gt;</code>. Dashed lines show the belonging of functions (outlined in ellipsises) to certain class entities, solid arrow lines show execution flow.</p>
 <figure>
-<img src="/decl_testing/test_invok_standard.svg" alt="Standard Python unittest workflow diagram" class="center" /><figcaption>Standard Python unittest workflow diagram</figcaption>
+<img src="decl_testing/test_invok_standard.svg" alt="Standard Python unittest workflow diagram" class="center" /><figcaption>Standard Python unittest workflow diagram</figcaption>
 </figure>
 <p>Now we will show the same picture with emphasis to Gabbi part and some standard components omited.</p>
 <figure>
-<img src="/decl_testing/test_invok_gabbi.svg" alt="Gabbi part workflow diagram" class="center" /><figcaption>Gabbi part workflow diagram</figcaption>
+<img src="decl_testing/test_invok_gabbi.svg" alt="Gabbi part workflow diagram" class="center" /><figcaption>Gabbi part workflow diagram</figcaption>
 </figure>
 <h2 id="custom-request-and-response-handlers-preprocess-and-postprocess">Custom request and response handlers: <code>preprocess</code> and <code>postprocess</code></h2>
 <h3 id="actions-needed-bebore-or-after-test">Actions needed bebore or after test</h3>

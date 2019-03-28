@@ -189,3 +189,5 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#location
 
 
 articles/decrarative-testing-with-gabbi
+
+pandoc decl_testing.md -t html5 -s --css devstyle.css -o decl_testing.html
