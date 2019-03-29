@@ -271,10 +271,10 @@ def test_update(orig_dict, new_dict):
             orig_dict[key] = val
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-[Gabbi project]: (https://github.com/cdent/gabbi)
-[main page]: (https://gabbi.readthedocs.io/en/latest/)
-[Tests Format]: (https://gabbi.readthedocs.io/en/latest/format.html)
-[Unittest]: (https://docs.python.org/3.6/library/unittest.html)
-[David Beazley]: (https://pyvideo.org/python-brasil-2015/keynote-david-beazley-topics-of-interest-python-asyncio.html)
-[standard unittest]: (https://docs.python.org/3/library/unittest.html#unittest.TestResult)
-[documentation]: (https://gabbi.readthedocs.io/en/latest/)
+[Gabbi project]: https://github.com/cdent/gabbi
+[main page]: https://gabbi.readthedocs.io/en/latest/
+[Tests Format]: https://gabbi.readthedocs.io/en/latest/format.html
+[Unittest]: https://docs.python.org/3.6/library/unittest.html
+[David Beazley]: https://pyvideo.org/python-brasil-2015/keynote-david-beazley-topics-of-interest-python-asyncio.html
+[standard unittest]: https://docs.python.org/3/library/unittest.html#unittest.TestResult
+[documentation]: https://gabbi.readthedocs.io/en/latest/

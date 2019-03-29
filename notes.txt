@@ -190,4 +190,12 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#location
 
 articles/decrarative-testing-with-gabbi
 
+http://pandoc.org/
+http://www.software-architects.com/devblog/2017/05/23/Markdown-pandoc-conceptual-documents
+http://www.flutterbys.com.au/stats/tut/tut17.3.html
+http://www.nrstickley.com/pandoc-markdown/
+http://www.nrstickley.com/somelight/
+
+rsvg-convert will be needed for pdfs
+
 pandoc decl_testing.md -t html5 -s --css devstyle.css -o decl_testing.html

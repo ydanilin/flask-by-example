@@ -99,7 +99,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Are the any existing Python libraries which can do described above?</p>
 <h3 id="the-solution-is-gabbi">The Solution is: Gabbi</h3>
-<p><a href="" title="https://github.com/cdent/gabbi">Gabbi project</a> does exactly this. I strictly advise you to study for the first time just couple of pages in the documentation: <a href="" title="https://gabbi.readthedocs.io/en/latest/">main page</a> and <a href="" title="https://gabbi.readthedocs.io/en/latest/format.html">Tests Format</a> section. I just show here one test example of user login REST API endpoint.</p>
+<p><a href="https://github.com/cdent/gabbi">Gabbi project</a> does exactly this. I strictly advise you to study for the first time just couple of pages in the documentation: <a href="https://gabbi.readthedocs.io/en/latest/">main page</a> and <a href="https://gabbi.readthedocs.io/en/latest/format.html">Tests Format</a> section. I just show here one test example of user login REST API endpoint.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml numberLines"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># file variables are convenient in case we reference data several times</span></a>
 <a class="sourceLine" id="cb1-2" title="2"><span class="co"># to use values elsewhere, start *variable_name with asterisk </span></a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="fu">username:</span><span class="at"> </span><span class="dt">&amp;username</span><span class="at"> &lt;my user name&gt;</span></a>
@@ -132,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>passing data between tests. <code>on behalf of</code> keyword, when it’s needed to “deal cards from two hands”.</li>
 </ul>
 <h2 id="python-unittest-invocation-procedure">Python unittest invocation procedure</h2>
-<p>Actually Gabbi plugs in into the standard Python <a href="" title="https://docs.python.org/3.6/library/unittest.html">Unittest</a> module and uses its infrastructure. It is good idea to outline briefly unittest workflow and see where Gabbi comes into play. This understanding will help us a lot when we move forward. The following figure shows us what happens behind the scenes when you hit <code>python -m unittest &lt;path.to.module.with.tests&gt;</code>. Dashed lines show the belonging of functions (outlined in ellipsises) to certain class entities, solid arrow lines show execution flow.</p>
+<p>Actually Gabbi plugs in into the standard Python <a href="https://docs.python.org/3.6/library/unittest.html">Unittest</a> module and uses its infrastructure. It is good idea to outline briefly unittest workflow and see where Gabbi comes into play. This understanding will help us a lot when we move forward. The following figure shows us what happens behind the scenes when you hit <code>python -m unittest &lt;path.to.module.with.tests&gt;</code>. Dashed lines show the belonging of functions (outlined in ellipsises) to certain class entities, solid arrow lines show execution flow.</p>
 <figure>
 <img src="decl_testing/test_invok_standard.svg" alt="Standard Python unittest workflow diagram" class="center" /><figcaption>Standard Python unittest workflow diagram</figcaption>
 </figure>
@@ -204,11 +204,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb3-36" title="36">    <span class="cf">for</span> action <span class="kw">in</span> actions:</a>
 <a class="sourceLine" id="cb3-37" title="37">        func_table[pre_or_postprocess][action](test)</a></code></pre></div>
 <p>Next, we define two function tables (dictionaries) for preprocess and postprocess functions respectively.</p>
-<p>Finally the main procedure <code>invoke_handlers()</code> appears. Using the technique to avoid <code>if</code>s, we select an appropriate function table (global one) and use, as <a href="" title="https://pyvideo.org/python-brasil-2015/keynote-david-beazley-topics-of-interest-python-asyncio.html">David Beazley</a> calls it, “sneaky method call” to invoke functions declared at the beginning.</p>
+<p>Finally the main procedure <code>invoke_handlers()</code> appears. Using the technique to avoid <code>if</code>s, we select an appropriate function table (global one) and use, as <a href="https://pyvideo.org/python-brasil-2015/keynote-david-beazley-topics-of-interest-python-asyncio.html">David Beazley</a> calls it, “sneaky method call” to invoke functions declared at the beginning.</p>
 <p>Note that with line xx we allow <code>preprocess</code> or <code>postprocess</code> keys in yaml files to be a single declarations or functions sequental lists.</p>
 <h2 id="passing-data-between-tests">Passing data between tests</h2>
 <h3 id="why-may-we-need-a-custom-test-runner">Why May We Need a Custom Test Runner</h3>
-<p>When discussing <code>preprocess</code> or <code>postprocess</code> handlers we imply that one type of handlers may be called in one test and another type of handlers in the test <em>that follows</em>. This way we need to decide how to transfer our test metadata (stored under <code>meta</code> key in <code>test.test_data</code>) from one test to another. Several ways may exist for that but, as I decided to make custom reporting as well, I made <strong>custom test runner</strong> and implemented there also custom <code>TextTestResult</code> class which inherits <a href="" title="https://docs.python.org/3/library/unittest.html#unittest.TestResult">standard unittest</a> <code>TestResult</code>.</p>
+<p>When discussing <code>preprocess</code> or <code>postprocess</code> handlers we imply that one type of handlers may be called in one test and another type of handlers in the test <em>that follows</em>. This way we need to decide how to transfer our test metadata (stored under <code>meta</code> key in <code>test.test_data</code>) from one test to another. Several ways may exist for that but, as I decided to make custom reporting as well, I made <strong>custom test runner</strong> and implemented there also custom <code>TextTestResult</code> class which inherits <a href="https://docs.python.org/3/library/unittest.html#unittest.TestResult">standard unittest</a> <code>TestResult</code>.</p>
 <p>From the test invocation workflow diagram you see that <code>TestCase</code>’s <code>run()</code> metnod calls:</p>
 <ul>
 <li><code>startTest()</code>;</li>
@@ -266,7 +266,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb6-9" title="9">    <span class="co"># write standalone generation routine output to POST payload data</span></a>
 <a class="sourceLine" id="cb6-10" title="10">    test.test_data[<span class="st">&#39;data&#39;</span>][<span class="st">&#39;2fa_password&#39;</span>] <span class="op">=</span> get_totp_token(tfa_secret)</a></code></pre></div>
 <h2 id="afterword">Afterword</h2>
-<p>Gabbi framework itself is very useful in REST API testing. I advise you to investigate the <a href="" title="https://gabbi.readthedocs.io/en/latest/">documentation</a> deeper to discover its powerful capabilities such as:</p>
+<p>Gabbi framework itself is very useful in REST API testing. I advise you to investigate the <a href="https://gabbi.readthedocs.io/en/latest/">documentation</a> deeper to discover its powerful capabilities such as:</p>
 <ul>
 <li>JSONPath response data evaluator. Note that expected test JSONs to compare with can be loaded from separate files.</li>
 <li>magical variables that can be used to make reference to the state of a current test, the one just prior or any test prior to the current one. The variables are replaced with real values during test processing. Sometimes these references provided by Gabby may replace our keyword <code>meta</code> approach. I was aware of this built-in functionality when introduced <code>meta</code> keyword and now use these two approaches interchangebly, which one creates less amount of code.</li>
